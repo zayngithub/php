@@ -1,9 +1,15 @@
-# php
-Tugas
-<?php 
-session_start();
-echo "<script>alert('Berhasil Logout');window.location=('index.php')</script>";
-session_destroy();
-?>
-Penjelasan
-Sintak ini berisi tentang cara log aut dari suatuprogram
+!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Latihan Membuat Login</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+</head>
+<body>
+	<center><h1 class="alert alert-info">Selamat datang</h1></center>
+	<br>
+	<center><b><a href="code_logout.php" class="btn btn-danger">Logout</a></b></center>
+</body>
+</html>
+Penjelasan pada tag a yabg menyatu dengan href dan di tutup dengan berpisah dengan link mengakibatkan eror pada program
