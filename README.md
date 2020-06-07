@@ -1,15 +1,23 @@
-!DOCTYPE html>
-<html>
-<head>
-	<title>Home</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Latihan Membuat Login</title>
-	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
-</head>
-<body>
-	<center><h1 class="alert alert-info">Selamat datang</h1></center>
-	<br>
-	<center><b><a href="code_logout.php" class="btn btn-danger">Logout</a></b></center>
-</body>
-</html>
-Penjelasan pada tag a yabg menyatu dengan href dan di tutup dengan berpisah dengan link mengakibatkan eror pada program
+<?php
+session_start();
+$user = $_POST["usr"];
+$pass = $_POST["pass"];
+//==============================
+$dbuser = "admin";
+$dbpass = "admin";
+//==============================
+if($user == $dbuser && $pass == $dbpass){
+	echo "<script>alert('Sucess');window.location = ('dashboard.php')</script>";
+} else {
+    if(isset($_SESSION["salah"])){
+        $_SESSION["salah"]++;
+    } else{
+        $_SESSION["salah"] = 1;
+    }
+    echo "<script>alert('Wrong password or username'); window.location = ('index.php')</script>";
+}
+Penjelasan
+Tag inj berisi tentang cara memulai sesi 
+Dengan cara memasukan unser pas dan unser name
+Jika unser pas dan unser name nya benar maka muncul tulisan aelanjutnya
+Jika slaah akan muncul tulisan silahkan coba lagi
